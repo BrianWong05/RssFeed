@@ -3,12 +3,12 @@ import untangle
 from bs4 import BeautifulSoup
 
 
-def rss(url, limit=999, detail=False):
+def rss(url, limit=10, detail=False):
     return_list = []
     res = requests.get(url)
     items = untangle.parse(res.text).rss.channel.item
     for idx, item in enumerate(items):
-        if limit < idx:
+        if limit < idx+1:
             return return_list
         tmp = {}
         tmp['title'] = item.title.cdata
