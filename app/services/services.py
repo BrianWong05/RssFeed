@@ -30,6 +30,7 @@ def cnn(url):
     t = ''
     for p in paras:
         t+=p.getText()
+        t+='\n'
     return t
 
 def bbc(url):
@@ -39,4 +40,5 @@ def bbc(url):
     t = ''
     for p in paras:
         t+=p.getText()
+        t+='\n'
     return t
