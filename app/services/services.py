@@ -30,15 +30,15 @@ def cnn(url):
     t = ''
     for p in paras:
         t+=p.getText()
-        t+='\n'
+        t+='\n\n'
     return t
 
 def bbc(url):
     res = requests.get(url)
     soup = BeautifulSoup(res.text,"html.parser")
-    paras = soup.select('.ssrcss-uf6wea-RichTextComponentWrapper')
+    paras = soup.select('[data-component="text-block"]')
     t = ''
     for p in paras:
         t+=p.getText()
-        t+='\n'
+        t+='\n\n'
     return t
